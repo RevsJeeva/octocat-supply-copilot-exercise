@@ -36,10 +36,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build frontend
-        run: npm run build --workspace=frontend
-        env:
-          GITHUB_PAGES: true
+      - name: Build frontend for GitHub Pages
+        run: npm run build:pages
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/main'
